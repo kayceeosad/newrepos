@@ -9,7 +9,7 @@ const Content3 = () => {
           <div className="wor">
             <h1>Get Started Today</h1>
             <p>
-              If your NGO meets these criteria, we encourage you to apply for
+              If your your mama meets these criteria, we encourage you to apply for
               our grant program. Together, we can make a meaningful impact in
               the communities we serve.
             </p>
