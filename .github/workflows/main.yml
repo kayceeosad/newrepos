@@ -32,9 +32,9 @@ jobs:
       - name: Upload build files to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets_SSH_HOST }}
-          username: ${{ secrets_SSH_USER }}
-          key: ${{ secrets_SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           source: "build/*"
           target: "/tmp/app_build"
 
@@ -42,9 +42,9 @@ jobs:
       - name: Deploy & Restart Nginx
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: ${{ secrets_SSH_HOST }}
-          username: ${{ secrets_SSH_USER }}
-          key: ${{ secrets_SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             sudo rm -rf /var/www/html/*
             sudo mv /tmp/app_build/build/* /var/www/html/
